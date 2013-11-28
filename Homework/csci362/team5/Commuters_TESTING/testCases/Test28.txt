@@ -1,0 +1,7 @@
+Test Name: Test28
+Test id: 28
+requirement: Shall output if a point is within a triangle of 3 other points
+component: helpers.py
+method: insideTriangle()
+input: [1,1],[[0,0],[10,0],[0,10]]
+expectedOutcome: True

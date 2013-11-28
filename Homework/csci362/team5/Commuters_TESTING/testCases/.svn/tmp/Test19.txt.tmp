@@ -1,0 +1,15 @@
+<<<<<<< .mine
+Test Name: Test19
+Test id: 19
+requirement: Passing more than two ordered pairs should result in an error
+component: helpers.py
+method: getAngle()
+input: [1.8,0][0,0][7,1][4,3]
+expectedOutcome: TypeError=======
+Test Name: Test19
+Test id: 19
+requirement: ?
+component: helpers.py
+method: getAngle()
+input: [1.8,0][0,0][7,1][4,3]
+expectedOutcome: TypeError>>>>>>> .r280

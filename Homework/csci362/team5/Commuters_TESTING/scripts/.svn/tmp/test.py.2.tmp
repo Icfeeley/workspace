@@ -1,0 +1,171 @@
+'''
+	Automated Testing Framework For:
+		Physics, a 2D Physics Playground for Kids
+    	By: Alex Levenson and Brian Jordan
+	Created by: Ian Feeley, Tan Nguyen, Andrew Armstrong, and Justin Wooton
+'''
+#==============================================================================
+<<<<<<< .mine
+#Write a parser for the input given in the testx.txt file that evaluates the string given to a python data type.
+#Devise a way to test any given number of parameters passed in from the input in testx.txt file.
+#Fix issue with python evaluating some large inputs to scientific notation.
+=======
+# TODO: Continue on failed test
+#       Add path to test cases files
+#       Write more test cases
+#       Polish to look prettier
+#       Add theme to HTML output
+>>>>>>> .r170
+#==============================================================================
+import os
+import imp
+import sys
+import commands
+
+def main():
+
+	#returns path of this python file
+	workingDir = os.path.dirname(os.path.abspath(__file__))
+	#builds path to testCases directory
+	testCasesDir = workingDir.replace('scripts', 'testCases')
+	'''
+	Opens every .txt file in the testCases directory and makes testcase objects 
+	from the data parsed. Then creates a list of of test case objects.
+	'''
+	testCases = []
+	try:
+		for fileName in os.listdir(testCasesDir):
+			if fileName.endswith('.txt'):
+				try:
+					testCaseFile = open(testCasesDir + '/' + fileName)
+					testData = []
+					for line in testCaseFile:
+						parsedData = line[line.index(':') + 1:]
+						parsedData = parsedData.strip()
+						testData.append(parsedData)
+					try:
+						testcase = testCase(testData[0],testData[1],testData[2],testData[3],testData[4],testData[5],testData[6])
+					except TypeError:
+						print 'Wrong number arguments in ' + fileName + ' to create a test case.'
+					testCases.append(testcase)
+			
+					testCaseFile.close()
+				except IOError:
+					print 'Error! Unable to open ' + fileName + '!'
+	except OSError:
+		print 'Error! The "testCases" directory could not be found!'
+
+	#Loops through all of the test cases running tests and checking results with the Oracle
+	data = []
+	for case in testCases:
+		case.test()  #run test case
+		case.check() #run Oracle
+		data.append(case.jsonify()) #Testing
+	#build json string
+	json = 'function getData(){ var x = {"rows": ['
+	i = 0
+	for x in range(i, len(data)):
+		if x == 0:
+			json += data[i]
+		else:
+			json += ', ' + data[i]
+		i += 1
+	json += ']}; return x}'
+
+	reportsDir = workingDir.replace('scripts', 'reports/input.js')
+	print reportsDir
+	try:
+		jsonFile = open(reportsDir, 'w')
+		jsonFile.write(json)
+		jsonFile.close()
+	except IOError:
+		print 'data.json could not be found in the scripts folder'
+	
+	reportsDir = workingDir.replace('scripts', 'reports/output.html')
+	commands.getstatusoutput('xdg-open ' + reportsDir)
+
+
+class testCase:
+	def __init__(self,inName,inTestID,inRequirement,inComponent,inMethod, inInput,inExpectedOutput):
+		self.name = inName
+		self.testID = inTestID
+		self.requirement = inRequirement
+		self.component = inComponent
+		self.method = inMethod
+		self.expectedOutput = inExpectedOutput
+		self.input = inInput
+		self.output = ''
+		self.passed = False 
+	
+	def __str__(self):
+		return self.testID
+
+	def run(self):
+		print self.input
+		exec self.input
+
+	'''
+	Creates a JSON tuple containing all of the testcases attributes
+	'''
+	def jsonify(self):
+		jsonTuple = '{ "Test Name":"' + self.name + '" , "Test ID":"' + self.testID + '" , "Requirement":"' + self.requirement + '" , "Component":"' + self.component + '" , "Method":"' + self.method + '" , "Expected Output":"' +self.expectedOutput +'" , "Input":"' + self.input + '" , "Output":"' + self.output + '" , "Result":"' + str(self.passed) + '" }'
+		return jsonTuple
+
+	'''
+	Oracle. Compares expected result to result obtainted from test the method.
+	'''
+	def check(self):
+		if self.output == self.expectedOutput:
+			self.passed = True
+	
+	'''
+	Runs test cases against the specified component/method
+	'''
+	def test(self):
+		#build relitive path to component file
+		workingDir = os.path.dirname(os.path.abspath(__file__))
+		testDir = workingDir.replace('scripts', 'project/sugar-build/activities/Physics.activity/' + self.component)
+		
+		#load module for the component being tested
+		try:
+			testComponent = imp.load_source(self.component.replace('.py', ''), testDir)
+		except IOError:
+			print 'The component ' + self.component + ' could not be found in ' + testDir + '.'
+
+		#test code for distance method in helpers.py
+		#convert into string into 2 lists of ordered pairs
+		x = self.input.replace('[','')
+		x = x.replace(']','')
+		x = x.split(';')
+		x1 = x[0].split(',')
+
+		'''
+		Write a parser for the input given in the testx.txt file that evaluates the string given to a python data type.
+		Devise a way to test any given number of parameters passed in from the input in testx.txt file.
+		Fix issue with python evaluating some large inputs to scientific notation.
+		'''
+
+		try:
+			x1 = [float(i) for i in x1]
+			x2 = x[1].split(',')
+			x2 = [float(i) for i in x2]
+			if len(x1) == 2:
+				mth = self.method.replace('(','')
+				mth = mth.replace(')','')
+				try:
+					func = getattr(testComponent, mth)
+				except AttributeError:
+					print 'The method ' + self.method + ' could not be found in ' + self.component + '.'
+				else:
+					print func(x1,x2)
+			else:
+				self.output ="IndexError"
+		except ValueError:
+			#catches a non numeric value input
+			self.output = "ValueError"
+		except IndexError:
+			print 'index error at' + self.testID
+			self.output = "IndexError"
+
+
+main()

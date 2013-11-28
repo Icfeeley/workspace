@@ -1,0 +1,34 @@
+requirements
+--This line, and those below, will be ignored--
+
+M    Commuters_TESTING/scripts/test.py
+A    Commuters_TESTING/testCases/test2.txt
+A    Commuters_TESTING/testCases/test3.txt
+A    Commuters_TESTING/testCases/test4.txt
+A    Commuters_TESTING/testCases/test5.txt
+A    Commuters_TESTING/testCases/test6.txt
+A    Commuters_TESTING/testCases/Test22
+A    Commuters_TESTING/testCases/test7.txt
+A    Commuters_TESTING/testCases/test8.txt
+A    Commuters_TESTING/testCases/test9.txt
+A    Commuters_TESTING/testCases/Test10.txt
+A    Commuters_TESTING/testCases/test11.txt
+A    Commuters_TESTING/testCases/Test20.txt
+A    Commuters_TESTING/testCases/test12.txt
+A    Commuters_TESTING/testCases/Test21.txt
+A    Commuters_TESTING/testCases/Test22.txt
+A    Commuters_TESTING/testCases/Test13.txt
+A    Commuters_TESTING/testCases/Test23.txt
+A    Commuters_TESTING/testCases/Test14.txt
+A    Commuters_TESTING/testCases/Test24.txt
+A    Commuters_TESTING/testCases/test15.txt
+A    Commuters_TESTING/testCases/Test16.txt
+A    Commuters_TESTING/testCases/Test25.txt
+A    Commuters_TESTING/testCases/Test17.txt
+A    Commuters_TESTING/testCases/Test18.txt
+A    Commuters_TESTING/testCases/test7
+A    Commuters_TESTING/testCases/Test19.txt
+M    Commuters_TESTING/testCases/test1.txt
+A    svn-commit.2.tmp
+A    svn-commit.tmp
+A    svn-commit.3.tmp

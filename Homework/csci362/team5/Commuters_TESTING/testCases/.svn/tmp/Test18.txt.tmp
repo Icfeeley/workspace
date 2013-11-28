@@ -1,0 +1,15 @@
+<<<<<<< .mine
+Test Name: Test18
+Test id: 18
+requirement: Passing a syntactically wrong number should result in a SyntaxError
+component: helpers.py
+method: getAngle()
+input: [1.8.8,0],[0,0]
+expectedOutcome: SyntaxError=======
+Test Name: Test18
+Test id: 18
+requirement: ?
+component: helpers.py
+method: getAngle()
+input: [1.8.8,0],[0,0]
+expectedOutcome: SyntaxError>>>>>>> .r280

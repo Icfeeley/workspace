@@ -1,0 +1,15 @@
+<<<<<<< .mine
+Test Name: Test22
+Test id: 22
+requirement: Passing two ordered pairs should return the three points of a triangle with the edge formed by the input
+component: helpers.py
+method: constructTriangleFromLine()
+input: [10,0],[0,0]
+expectedOutcome: [[0, 0], (10.0, 5.7735), (10.0, -5.7735)]=======
+Test Name: Test22
+Test id: 22
+requirement: ?
+component: helpers.py
+method: constructTriangleFromLine()
+input: [10,0],[0,0]
+expectedOutcome: [[0, 0], (10.0, 5.7735), (10.0, -5.7735)]>>>>>>> .r280

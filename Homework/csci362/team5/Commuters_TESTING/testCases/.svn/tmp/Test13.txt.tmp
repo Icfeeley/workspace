@@ -1,0 +1,15 @@
+<<<<<<< .mine
+Test Name: Test13
+Test id: 13
+requirement: The angle between a point and its self should be 0
+component: helpers.py
+method: getAngle()
+input: [0,0],[0,0]
+expectedOutcome: 0.0=======
+Test Name: Test13
+Test id: 13
+requirement: ?
+component: helpers.py
+method: getAngle()
+input: [0,0],[0,0]
+expectedOutcome: 0.0>>>>>>> .r280

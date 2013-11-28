@@ -1,0 +1,17 @@
+<<<<<<< .mine
+Test Name: Test4
+Test id: 4
+requirement: Inputing a negitive 0 should not produce any errors
+component: helpers.py
+method: distance()
+input: [-0,0],[0,0]
+expectedOutcome: 0.0
+=======
+Test Name: Test4
+Test id: 4
+requirement: ?
+component: helpers.py
+method: distance()
+input: [-0,0],[0,0]
+expectedOutcome: 0.0
+>>>>>>> .r280

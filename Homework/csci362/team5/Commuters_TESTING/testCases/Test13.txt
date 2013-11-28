@@ -1,0 +1,7 @@
+Test Name: Test13
+Test id: 13
+requirement: Shall return an angle of 0 upon entering the same point
+component: helpers.py
+method: getAngle()
+input: [0,0],[0,0]
+expectedOutcome: 0.0

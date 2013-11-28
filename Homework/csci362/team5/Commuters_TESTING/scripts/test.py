@@ -1,0 +1,178 @@
+'''
+	Automated Testing Framework For:
+		Physics, a 2D Physics Playground for Kids
+    		By: Alex Levenson and Brian Jordan
+	Created by: Ian Feeley, Tan Nguyen, Andrew Armstrong, and Justin Wooton
+'''
+#==============================================================================
+#rewrite the Json section
+#Devise a way to test any given number of parameters passed in from the input in testx.txt file.
+#Fix issue with python evaluating some large inputs to scientific notation.
+#=======
+# TODO: Continue on failed test
+#       Add path to test cases files
+#       Write more test cases
+#       Polish to look prettier
+#       Add theme to HTML outputTest Name: Test20
+#==============================================================================
+import os
+import imp
+import sys
+import commands
+import datetime
+
+def main():
+
+	#returns path of this python file
+	workingDir = os.path.dirname(os.path.abspath(__file__))
+	#builds path to testCases directory
+	testCasesDir = workingDir.replace('scripts', 'testCases')
+
+	'''
+	Opens every .txt file in the testCases directory, makes testCase objects 
+	from the data parsed and, puts the testCase into a list of testCase objects.
+	'''
+	testCases = []
+	try:
+		for fileName in os.listdir(testCasesDir):
+			if fileName.endswith('.txt'):
+				try:
+					testCaseFile = open(testCasesDir + '/' + fileName)
+					testData = []
+					for line in testCaseFile:
+						parsedData = line[line.index(':') + 1:]
+						parsedData = parsedData.strip()
+						testData.append(parsedData)
+					try:
+						testcase = testCase(testData[0],testData[1],testData[2],testData[3],testData[4],testData[5],testData[6])
+					except TypeError:
+						print 'Wrong number arguments in ' + fileName + ' to create a test case.'
+					testCases.append(testcase)
+				except IOError:
+					print 'Error! Unable to open ' + fileName + '!'
+				finally:
+					testCaseFile.close()
+	except OSError:
+		print 'Error! The "testCases" directory could not be found!'
+
+	#Loops through all of the test cases running tests and checking results with the Oracle
+	data = []
+	for case in testCases:
+		case.test()  #run test case
+		case.check() #run Oracle
+		data.append(case.jsonify()) #Testing
+	#build json string
+	json = 'function getData(){ var x = {"rows": ['
+	i = 0
+	for x in range(i, len(data)):
+		if x == 0:
+			json += data[i]
+		else:
+			json += ', ' + data[i]
+		i += 1
+	json += ']}; return x}'
+
+	#opens up input.js file in reports directory and writes in the json string
+	reportsDir = workingDir.replace('scripts', 'reports/input.js')
+	logDir = workingDir.replace('scripts', 'reports/log.txt')
+	logEntry = json + '\n' + str(datetime.datetime.now()) + '\n\n'
+	try:
+		logFile = open(logDir, 'a')
+		logFile.write(logEntry)
+		jsonFile = open(reportsDir, 'w')
+		jsonFile.write(json)
+		jsonFile.close()
+		logFile.close()
+	except IOError:
+		print 'data.json could not be found in the scripts folder'
+	
+	#launches the output.html file with the systems default browser
+	reportsDir = workingDir.replace('scripts', 'reports/output.html')
+	commands.getstatusoutput('xdg-open ' + reportsDir)
+
+class testCase:
+	'''
+	testCase objects have attributes containing all the data found in a testx.txt file
+	additionally they have attributes for the output of the test and where the test passes
+	or failed.
+
+	Methods:
+	jsonify() 	-- creates a json tuple containing all of the attributes of the testCase
+
+	test()		-- imports the file and method to be tested and executes the method using
+				the input attribute
+
+	check()		-- Compares the expeced output to the actual output and determines if the 
+				test passed or failed
+	'''
+	def __init__(self,inName,inTestID,inRequirement,inComponent,inMethod, inInput,inExpectedOutput):
+		self.name = inName
+		self.testID = inTestID
+		self.requirement = inRequirement
+		self.component = inComponent
+		self.method = inMethod
+		self.expectedOutput = inExpectedOutput
+		self.input = inInput
+		self.output = ''
+		self.passed = 'Failed' 
+	
+	def __str__(self):
+		return self.testID
+
+	'''
+	Creates a JSON tuple containing all of the testcases attributes
+	'''
+	def jsonify(self):
+		jsonTuple = '{ "Test Name":"' + self.name + '" , "Test ID":"' + self.testID + '" , "Requirement":"' + self.requirement + '" , "Component":"' + self.component + '" , "Method":"' + self.method + '" , "Expected Output":"' +self.expectedOutput +'" , "Input":"' + self.input + '" , "Output":"' + self.output + '" , "Result":"' + str(self.passed) + '" }'
+		return jsonTuple
+
+	'''
+	Oracle. Compares expected result to result obtainted from test the method.
+	'''
+	def check(self):
+		if type(eval(self.expectedOutput)) == float:
+			if self.output == str(eval(self.expectedOutput)):
+				self.passed = 'Passed'
+		elif self.output == self.expectedOutput:
+			self.passed = 'Passed'
+	
+	'''
+	Runs test cases against the specified component/method
+	'''
+	def test(self):
+		#build relitive path to component file
+		workingDir = os.path.dirname(os.path.abspath(__file__))
+		testDir = workingDir.replace('scripts', 'project/sugar-build/activities/Physics.activity/' + self.component)
+		
+		#load module for the component being tested
+		try:
+			testComponent = imp.load_source(self.component.replace('.py', ''), testDir)
+		except IOError:
+			print 'The component ' + self.component + ' could not be found in ' + testDir + '.'
+		
+		#load method and run test, excepting errors caused by possible inputs to the method
+		try:
+			mth = self.method.replace('(','')
+			mth = mth.replace(')','')
+			try:
+				#method is loaded from component and assigned name func
+				func = getattr(testComponent, mth)
+			except AttributeError:
+				print 'The method ' + self.method + ' could not be found in ' + self.component + '.'
+			else:
+				#func gets called with the input from the test case and its return is
+				#stored as the output attribute of the testcase object.
+				self.output = str(eval ("func("+ self.input +")"))
+		except ValueError:
+			self.output = "ValueError"
+		except IndexError:
+			print 'index error at' + self.testID
+			self.output = "IndexError"
+		except NameError:
+			self.output = "NameError"
+		except SyntaxError:
+			self.output = "SyntaxError"
+		except TypeError:
+			self.output = "TypeError"
+
+main()

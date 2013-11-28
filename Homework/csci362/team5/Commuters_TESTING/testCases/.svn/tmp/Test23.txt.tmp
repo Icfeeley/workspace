@@ -1,0 +1,15 @@
+<<<<<<< .mine
+Test Name: Test23
+Test id: 23
+requirement: The area of a 10 x 10 rectangle should be 100
+component: helpers.py
+method: polyArea
+input: [[10,0],[0,0],[0,10],[10,10]]
+expectedOutcome: 100=======
+Test Name: Test23
+Test id: 23
+requirement: ?
+component: helpers.py
+method: polyArea()
+input: [[10,0],[0,0],[0,10],[10,10]]
+expectedOutcome: 100>>>>>>> .r280

@@ -1,0 +1,7 @@
+Test Name: Test10
+Test id: 10
+requirement: Distance shall return correct value upon entering two coordinates
+component: helpers.py
+method: distance()
+input: [0+32,0],[0,0]
+expectedOutcome: 32.0

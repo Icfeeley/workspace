@@ -1,0 +1,7 @@
+Test Name: Test20
+Test id: 20
+requirement: Shall handle negative points
+component: helpers.py
+method: getAngle()
+input: [9999999999,9999999999999],[-999999999,-99999999999]
+expectedOutcome: 1.57188543527

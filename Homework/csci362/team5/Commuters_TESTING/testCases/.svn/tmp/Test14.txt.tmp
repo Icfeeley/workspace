@@ -1,0 +1,15 @@
+<<<<<<< .mine
+Test Name: Test14
+Test id: 14
+requirement: Passing an undefined variable to getAngle should raise an error
+component: helpers.py
+method: getAngle()
+input: pie
+expectedOutcome: NameError=======
+Test Name: Test14
+Test id: 14
+requirement: ?
+component: helpers.py
+method: getAngle()
+input: pie
+expectedOutcome: NameError>>>>>>> .r280

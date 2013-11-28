@@ -1,0 +1,7 @@
+Test Name: Test26
+Test id: 26
+requirement: Shall be able to output correctly with 2 non-zero coordinates
+component: helpers.py
+method: distance()
+input: [4,4],[4,5]
+expectedOutcome: 1.0

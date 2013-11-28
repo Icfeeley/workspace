@@ -1,0 +1,7 @@
+Test Name: Test11
+Test id: 11
+requirement: ?
+component: helpers.py
+method: distance()
+input: [1.8,0][0,0][7,1][4,3]
+expectedOutcome: TypeError

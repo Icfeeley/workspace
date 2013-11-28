@@ -1,0 +1,77 @@
+#centerdiv {
+	position:absolute;
+	margin: auto;
+	top:100px;
+	left:10px;
+	right:10px;
+	/*width:70%;*/
+	background-color:white;
+}
+
+#header{
+	background-color:#333333;
+	width:100%;
+}
+
+body {
+	background-image:url('images/bg6.jpg');
+	background-size: cover;
+	background-color:black;
+	background-attachment: fixed;
+}
+
+#tablediv {
+	vertical-align:middle;
+	text-align:center;
+	background-color:white;
+}
+
+#logo{
+	/*width:500px;*/
+	height:158px;
+	padding-left:20px;
+	float:left;
+}
+
+.pass{
+	background:darkgreen !important;
+	/*background-color:darkgreen !important;*/
+	
+}
+.fail{	
+	background:darkred !important;
+	/*background-color:darkred !important;*/
+
+}
+
+#header{
+	vertical-align: middle
+}
+#headerright{
+	color:white;
+	float:right;
+	vertical-align: middle;
+	position:absolute;
+	right:0;
+	padding-right:10px;
+	font-family: Verdana,Arial,sans-serif;
+}
+
+
+#headerleft{
+	color:white;
+	float:left;
+	vertical-align: middle;
+	position:absolute;
+	left:0;
+	padding-left:10px;
+	font-family: Verdana,Arial,sans-serif;
+}
+
+.teamMembers{
+	float:right;
+}
+.headerText{
+	font-size:2em;
+	float:right;
+}

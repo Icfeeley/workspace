@@ -1,0 +1,15 @@
+<<<<<<< .mine
+Test Name: Test15
+Test id: 15
+requirement: Passing a non integer value in a ordered pair should cause an error
+component: helpers.py
+method: getAngle()
+input: [q,0],[0,0]
+expectedOutcome: NameError=======
+Test Name: Test15
+Test id: 15
+requirement: ?
+component: helpers.py
+method: getAngle()
+input: [q,0],[0,0]
+expectedOutcome: NameError>>>>>>> .r280

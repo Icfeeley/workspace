@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" media="screen" href="css/smoothness/jquery-ui-1.10.3.custom.min.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="css/ui.jqgrid.css" />
+	 
+	<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
+	<script src="js/i18n/grid.locale-en.js" type="text/javascript"></script>
+	<script src="js/jquery.jqGrid.min.js" type="text/javascript"></script>
+<<<<<<< .mine
+	<script src="input.js" type="text/javascript"></script>
+
+=======
+	<script src="js/jqCreator.js" type="text/javascript"></script>
+	<script src="input.js" type="text/javascript"></script>
+	<script src="js/loadData.js" type="text/javascript"></script>
+>>>>>>> .r131
+	<style type="text/css"></style>
+</head>
+<body>
+	<div>
+		<table id="cat">
+			
+			
+		</table>
+	</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+Test Name: Test15
+Test id: 15
+requirement: ?
+component: helpers.py
+method: getAngle()
+input: [q,0],[0,0]
+expectedOutcome: NameError

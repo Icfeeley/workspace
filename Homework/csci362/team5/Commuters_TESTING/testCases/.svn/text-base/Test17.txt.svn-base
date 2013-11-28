@@ -1,0 +1,7 @@
+Test Name: Test17
+Test id: 17
+requirement: Shall fail with no input
+component: helpers.py
+method: getAngle()
+input: 
+expectedOutcome: TypeError

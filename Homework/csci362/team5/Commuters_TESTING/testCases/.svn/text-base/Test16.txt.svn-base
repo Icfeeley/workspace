@@ -1,0 +1,7 @@
+Test Name: Test16
+Test id: 16
+requirement: Shall return the correct angle upon entering two numbers
+component: helpers.py
+method: getAngle()
+input: [33,0],[0,0]
+expectedOutcome: 3.14159265359

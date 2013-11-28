@@ -1,0 +1,7 @@
+Test Name: Test9
+Test id: 9
+requirement: ?
+component: helpers.py
+method: distance()
+input: pie
+expectedOutcome: NameError

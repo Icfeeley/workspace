@@ -1,0 +1,17 @@
+<<<<<<< .mine
+Test Name: Test12
+Test id: 12
+requirement: Passing null to the distance method should cause an error
+component: helpers.py
+method: distance()
+input: 
+expectedOutcome: TypeError
+=======
+Test Name: Test12
+Test id: 12
+requirement: ?
+component: helpers.py
+method: distance()
+input: 
+expectedOutcome: TypeError
+>>>>>>> .r280

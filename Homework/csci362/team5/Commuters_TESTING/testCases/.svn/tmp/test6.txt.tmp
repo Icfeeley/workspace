@@ -1,0 +1,17 @@
+<<<<<<< .mine
+Test Name: Test6
+Test id: 6
+requirement: inputing a undefined variable should produce a name error
+component: helpers.py
+method: distance()
+input: [q,0],[0,0]
+expectedOutcome: NameError
+=======
+Test Name: Test6
+Test id: 6
+requirement: ?
+component: helpers.py
+method: distance()
+input: [q,0],[0,0]
+expectedOutcome: NameError
+>>>>>>> .r280

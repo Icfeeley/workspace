@@ -1,0 +1,15 @@
+<<<<<<< .mine
+Test Name: Test25
+Test id: 25
+requirement: the area of a polygon should not depend its location in positive or negitive space
+component: helpers.py
+method: polyArea()
+input: [[10,10],[-10,-10],[10,-10],[-10,10]]
+expectedOutcome: 400=======
+Test Name: Test25
+Test id: 25
+requirement: ?
+component: helpers.py
+method: polyArea()
+input: [[10,10],[-10,-10],[10,-10],[-10,10]]
+expectedOutcome: 400>>>>>>> .r280

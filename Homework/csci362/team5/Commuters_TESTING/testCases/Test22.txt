@@ -1,0 +1,7 @@
+Test Name: Test22
+Test id: 22
+requirement: Shall create a triangle from the line
+component: helpers.py
+method: constructTriangleFromLine()
+input: [10,0],[0,0]
+expectedOutcome: [[0, 0], (10.0, 5.7735), (10.0, -5.7735)]

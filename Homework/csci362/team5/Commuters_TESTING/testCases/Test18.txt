@@ -1,0 +1,7 @@
+Test Name: Test18
+Test id: 18
+requirement: Shall fail with malformed input
+component: helpers.py
+method: getAngle()
+input: [1.8.8,0],[0,0]
+expectedOutcome: SyntaxError

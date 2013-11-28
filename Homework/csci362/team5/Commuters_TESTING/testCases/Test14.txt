@@ -1,0 +1,7 @@
+Test Name: Test14
+Test id: 14
+requirement: Shall fail with malformed input
+component: helpers.py
+method: getAngle()
+input: pie
+expectedOutcome: NameError

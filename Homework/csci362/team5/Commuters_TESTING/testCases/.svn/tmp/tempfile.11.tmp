@@ -1,0 +1,7 @@
+Test Name: Test7
+Test id: 7
+requirement: ?
+component: helpers.py
+method: distance()
+input: [1.8,0],[0,0]
+expectedOutcome: 1.8

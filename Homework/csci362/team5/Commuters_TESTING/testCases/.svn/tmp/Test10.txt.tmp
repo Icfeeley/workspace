@@ -1,0 +1,17 @@
+<<<<<<< .mine
+Test Name: Test10
+Test id: 10
+requirement: Passing equations that resolve to integer vaules should pass
+component: helpers.py
+method: distance()
+input: [0+32,0],[0,0]
+expectedOutcome: 32.0
+=======
+Test Name: Test10
+Test id: 10
+requirement: ?
+component: helpers.py
+method: distance()
+input: [0+32,0],[0,0]
+expectedOutcome: 32.0
+>>>>>>> .r280

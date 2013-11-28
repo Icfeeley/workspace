@@ -1,0 +1,7 @@
+Test Name: Test12
+Test id: 12
+requirement: Distance shall fail upon no input
+component: helpers.py
+method: distance()
+input: 
+expectedOutcome: TypeError

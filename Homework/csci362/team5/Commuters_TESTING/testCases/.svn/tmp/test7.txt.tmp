@@ -1,0 +1,17 @@
+<<<<<<< .mine
+Test Name: Test7
+Test id: 7
+requirement: Distance should be calculated correctly given floating point inputs
+component: helpers.py
+method: distance()
+input: [1.8,0],[0,0]
+expectedOutcome: 1.8
+=======
+Test Name: Test7
+Test id: 7
+requirement: ?
+component: helpers.py
+method: distance()
+input: [1.8,0],[0,0]
+expectedOutcome: 1.8
+>>>>>>> .r280

@@ -1,0 +1,15 @@
+<<<<<<< .mine
+Test Name: Test20
+Test id: 20
+requirement: Passing very large numbers (<2^32) or very small numbers (> -(2^32))
+component: helpers.py
+method: getAngle()
+input: [9999999999,9999999999999],[-999999999,-99999999999]
+expectedOutcome: 1.57188543527=======
+Test Name: Test20
+Test id: 20
+requirement: ?
+component: helpers.py
+method: getAngle()
+input: [9999999999,9999999999999],[-999999999,-99999999999]
+expectedOutcome: 1.57188543527>>>>>>> .r280

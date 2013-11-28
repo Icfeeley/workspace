@@ -1,0 +1,7 @@
+Test Name: Test23
+Test id: 23
+requirement: Shall return the correct area of a polygon
+component: helpers.py
+method: polyArea()
+input: [[10,0],[0,0],[0,10],[10,10]]
+expectedOutcome: 100.0

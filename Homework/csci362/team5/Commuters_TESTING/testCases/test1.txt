@@ -1,0 +1,7 @@
+Test Name: Test1
+Test id: 1
+requirement: Distance between a point and its self should return 0, and tests inputs at 0
+component: helpers.py
+method: distance()
+input: [0,0],[0,0]
+expectedOutcome: 0.0

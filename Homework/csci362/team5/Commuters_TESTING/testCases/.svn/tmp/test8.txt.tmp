@@ -1,0 +1,17 @@
+<<<<<<< .mine
+Test Name: Test8
+Test id: 8
+requirement: Passing a syntactically incorrect error should produce a syntax error
+component: helpers.py
+method: distance()
+input: [1.8.8,0],[0,0]
+expectedOutcome: SyntaxError
+=======
+Test Name: Test8
+Test id: 8
+requirement: ?
+component: helpers.py
+method: distance()
+input: [1.8.8,0],[0,0]
+expectedOutcome: SyntaxError
+>>>>>>> .r280

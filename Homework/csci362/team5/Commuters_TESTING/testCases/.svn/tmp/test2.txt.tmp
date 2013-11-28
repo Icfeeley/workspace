@@ -1,0 +1,17 @@
+<<<<<<< .mine
+Test Name: Test2
+Test id: 2
+requirement: distance between a point and a negitive point should be positive
+component: helpers.py
+method: distance()
+input: [-1,0],[0,0]
+expectedOutcome: 1.0
+=======
+Test Name: Test2
+Test id: 2
+requirement: ?
+component: helpers.py
+method: distance()
+input: [-1,0],[0,0]
+expectedOutcome: 1.0
+>>>>>>> .r280

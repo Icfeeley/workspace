@@ -1,0 +1,7 @@
+Test Name: Test6
+Test id: 6
+requirement: Distance should not accept non integers
+component: helpers.py
+method: distance()
+input: [q,0],[0,0]
+expectedOutcome: NameError
